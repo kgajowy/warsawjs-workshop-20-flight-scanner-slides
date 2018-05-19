@@ -1,84 +1,99 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>WarsawJS Workshop #20 - React for Beginners</title>
+    <title>WarsawJS Workshop #20 - React for Beginners</title>
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>
-					<h3>Hello there!</h3>
-					<p class="fragment">About me</p>
-					<p class="fragment">About you & yours expectations :)</p>
-				</section>
-				<section>
-					<section>
-					<h3>Workshop's Agenda</h3>
-					<p >Food / Breaks / Coffee</p>
-					<p >Group photo</p>
-					<p >Poll</p>
-					</section>
-					<section>
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <h3>Hello there!</h3>
+            <p class="fragment">About me</p>
+            <p class="fragment">About you & yours expectations :)</p>
+        </section>
+        <section>
+            <section>
+                <h3>Workshop's Agenda</h3>
+            </section>
+            <section>
+                <p>Food's Poll - make sure you filled it!</p>
+            </section>
+            <section>
+                <p>Please fill out the poll after Workshop!</p>
+                <p>http://bit.ly/warsawjs-workshop-20-ankieta</p>
+            </section>
+            <section>
+                <p>Make sure you have:</p>
+                <p>node & npm</p>
+                <p>favourite editor (I recommend Webstorm!)</p>
+                <p>github up and running (your choice - cli/desktop app)</p>
+            </section>
+            <section>
+                <p>Please remember to create your repo and push your code to it!</p>
+                <p>the following name is <b>mandatory</b></p>
+                <h3>warsawjs-workshop-20-flight-scanner</h3>
+            </section>
+        </section>
+        <section>
+            <h3>AgendaJS</h3>
+            <ol>
+                <li>About project + <a href="https://kgajowy.github.io/warsawjs-workshop-20-flight-scanner/" target="_blankś">demo</a></li>
+                <li>Base App setup</li>
+                <li>Components, props & state</li>
+                <li>Styling (material-ui)</li>
+                <li>Interaction with REST API</li>
+            </ol>
+        </section>
+        <section>
+            Let's start!
+        </section>
+        <section>
+            <p>Clone repository (so that you have the full code&steps just in case)</p>
+            <h3>https://github.com/kgajowy/warsawjs-workshop-20-flight-scanner</h3>
+        </section>
+        <section>
+            <p>Please keep readme of the repo next to you - it is a hearth of our work today!</p>
+        </section>
+    </div>
+</div>
 
-						<h3 >Workstation check!</h3>
-						<p ><code>npm -v</code><br>
-							<code>npm -v</code><br>
-							<code>npm -v</code></p>
-					</section>
-				</section>
-				<section>
-					<h3>AgendaJS</h3>
-					<ol>
-						<li>About project</li>
-						<li>Base App setup</li>
-						<li>Components, props & state</li>
-						<li>Styling (material-ui)</li>
-						<li>Interaction with REST API</li>
-					</ol>
-				</section>
-				<section>
-					Let's start!
-				</section>
-				<section>
-					<h3>App Core</h3>
-					<p><code>npm i -g create-react-app</code></p>
-				</section>
-			</div>
-		</div>
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
-
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
-		</script>
-	</body>
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        dependencies: [
+            {src: 'plugin/markdown/marked.js'},
+            {src: 'plugin/markdown/markdown.js'},
+            {src: 'plugin/notes/notes.js', async: true},
+            {
+                src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+        ]
+    });
+</script>
+</body>
 </html>
